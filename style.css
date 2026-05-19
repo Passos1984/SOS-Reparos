@@ -1,0 +1,194 @@
+:root {
+    --primary-color: #222222; /* Cor mais escura para combinar com o laranja */
+    --secondary-color: #ff9800; /* O seu laranja */
+    --whatsapp-color: #25d366;
+    --bg-color: #f4f7f6;
+    --text-color: #333333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 15px;
+}
+
+/* O esqueleto que centraliza tudo (Faltava isso) */
+.container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    position: relative;
+}
+
+.header {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--secondary-color);
+}
+
+#logo-placeholder {
+    font-weight: bold;
+    font-size: 26px;
+    margin-bottom: 8px;
+    color: var(--secondary-color); /* Destaque laranja no logo */
+}
+
+.header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.form-container {
+    padding: 25px 20px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+/* Mantém os campos de número e complemento lado a lado sempre */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--primary-color);
+}
+
+/* Estilo das caixas de texto */
+input[type="text"], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.3s;
+    outline: none;
+}
+
+input[type="text"]:focus, textarea:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 5px rgba(255, 152, 0, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* --- SEUS ESTILOS PERSONALIZADOS --- */
+.radio-option {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.radio-option:hover {
+    border-color: var(--secondary-color);
+    background: #fff8ea;
+}
+
+.radio-option.selected {
+    border-color: var(--secondary-color);
+    background: #fff2d7;
+}
+
+.radio-option input {
+    width: auto;
+    accent-color: var(--secondary-color);
+}
+
+.btn-submit {
+    width: 100%;
+    border: none;
+    background: var(--whatsapp-color);
+    color: white;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    background: #20bc59;
+}
+
+.footer {
+    text-align: center;
+    padding: 16px;
+    font-size: 13px;
+    color: #666;
+    background: #fafafa;
+    border-top: 1px solid #eee;
+}
+
+.whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    background: var(--whatsapp-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 28px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Ajuste mobile: Apenas diminui margens, mas mantém os campos lado a lado */
+@media(max-width: 500px) {
+    .container {
+        border-radius: 8px;
+    }
+    .form-container {
+        padding: 20px 15px;
+    }
+}
