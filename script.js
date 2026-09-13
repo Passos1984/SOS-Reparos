@@ -23,7 +23,13 @@ const CONFIG = {
 };
 const whatsappFloat = document.getElementById('whatsapp-float');
 whatsappFloat.href = `https://wa.me/${CONFIG.whatsapp}`;
+document.title = `${CONFIG.nomeEmpresa} - Orçamento Rápido`;
 const radioOptions = document.querySelectorAll(".radio-option");
+const logoPlaceholder = document.getElementById('logo-placeholder');
+const descricaoEmpresa = document.getElementById('descricao-empresa');
+
+logoPlaceholder.textContent = `⚡ ${CONFIG.nomeEmpresa}`;
+descricaoEmpresa.textContent = CONFIG.descricao;
 
 radioOptions.forEach((option) => {
   option.addEventListener("click", () => {
