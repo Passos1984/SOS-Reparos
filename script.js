@@ -21,7 +21,8 @@ const CONFIG = {
     "Outro problema elétrico ou hidráulico",
   ],
 };
-
+const whatsappFloat = document.getElementById('whatsapp-float');
+whatsappFloat.href = `https://wa.me/${CONFIG.whatsapp}`;
 const radioOptions = document.querySelectorAll(".radio-option");
 
 radioOptions.forEach((option) => {
