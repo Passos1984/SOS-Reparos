@@ -1,46 +1,60 @@
-// COLOQUE O NÚMERO DO CLIENTE AQUI
-const WHATSAPP_NUMERO = '5551981962819';
+// CONFIGURAÇÕES DO CLIENTE
+const CONFIG = {
+  nomeEmpresa: "SOS Reparos",
+  whatsapp: "5551981962819",
+  cidade: "Porto Alegre",
 
-const radioOptions = document.querySelectorAll('.radio-option');
+  endereco: {
+    rua: "Rua Exemplo",
+    numero: "123",
+    bairro: "Centro",
+  },
 
-radioOptions.forEach(option => {
+  instagram: "https://www.instagram.com/sosreparos",
 
-    option.addEventListener('click', () => {
+  descricao: "Serviços de manutenção e reparos residenciais.",
 
-        radioOptions.forEach(opt => {
-            opt.classList.remove('selected');
-        });
+  servicos: [
+    "Chuveiro não esquenta / Queimou",
+    "Problema no Aquecedor a Gás (Junker)",
+    "Disjuntor caindo / Tomada derretida",
+    "Outro problema elétrico ou hidráulico",
+  ],
+};
 
-        option.classList.add('selected');
+const radioOptions = document.querySelectorAll(".radio-option");
 
+radioOptions.forEach((option) => {
+  option.addEventListener("click", () => {
+    radioOptions.forEach((opt) => {
+      opt.classList.remove("selected");
     });
 
+    option.classList.add("selected");
+  });
 });
 
+const formulario = document.getElementById("orcamentoForm");
 
-const formulario = document.getElementById('orcamentoForm');
+formulario.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-formulario.addEventListener('submit', function (e) {
+  const servico = document.querySelector('input[name="servico"]:checked').value;
+  const nome = document.getElementById("nome").value.trim();
+  const telefone = document.getElementById("telefone").value.trim();
+  const endereco = document.getElementById("endereco").value.trim();
+  const numero = document.getElementById("numero").value.trim();
+  const complemento = document.getElementById("complemento").value.trim();
+  const bairro = document.getElementById("bairro").value.trim();
 
-    e.preventDefault();
+  const detalhes =
+    document.getElementById("detalhes").value.trim() ||
+    "Nenhum detalhe informado";
 
-    const servico = document.querySelector('input[name="servico"]:checked').value;
+  const complementoTexto = complemento ? ` (${complemento})` : "";
 
-    const nome = document.getElementById('nome').value.trim();
-    const telefone = document.getElementById('telefone').value.trim();
-    const endereco = document.getElementById('endereco').value.trim();
-    const numero = document.getElementById('numero').value.trim();
-    const complemento = document.getElementById('complemento').value.trim();
-    const bairro = document.getElementById('bairro').value.trim();
-
-    const detalhes = document.getElementById('detalhes').value.trim() || 'Nenhum detalhe informado';
-
-    const complementoTexto = complemento ? ` (${complemento})` : '';
-
-    const enderecoCompleto = `${endereco}, Nº ${numero}${complementoTexto}`;
-
-    const mensagem =
-`
+  const enderecoCompleto = `${endereco}, Nº ${numero}${complementoTexto}`;
+  const mensagem = `
 ⚡ *NOVA SOLICITAÇÃO DE ORÇAMENTO* ⚡
 
 👤 *Cliente:* ${nome}
@@ -54,8 +68,6 @@ formulario.addEventListener('submit', function (e) {
 ${detalhes}
 `;
 
-    const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensagem)}`;
-
-    window.open(url, '_blank');
-
+  const url = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(mensagem)}`;
+  window.open(url, "_blank");
 });
