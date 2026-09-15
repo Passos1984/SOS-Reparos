@@ -161,6 +161,17 @@ textarea {
   background: #fafafa;
   border-top: 1px solid #eee;
 }
+#instagram-link {
+    color: var(--blue-tech);
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+#instagram-link:hover {
+    color: var(--blue-hover);
+    text-decoration: underline;
+}
 
 .whatsapp-float {
   position: fixed;

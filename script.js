@@ -2,13 +2,7 @@
 const CONFIG = {
   nomeEmpresa: "SOS Reparos",
   whatsapp: "5551981962819",
- areaAtendimento: "Canoas, Esteio e Sapucaia do Sul",
-
-  endereco: {
-    rua: "Rua Exemplo",
-    numero: "123",
-    bairro: "Centro",
-  },
+ areaAtendimento: "Porto Alegre e região",
 
   instagram: "https://www.instagram.com/sosreparos",
 
@@ -56,9 +50,12 @@ const logoPlaceholder = document.getElementById('logo-placeholder');
 
 const descricaoEmpresa = document.getElementById('descricao-empresa');
 
-const footer = document.querySelector('.footer');
+const footerArea = document.getElementById('footer-area');
+const instagramLink = document.getElementById('instagram-link');
 
-footer.textContent = `Atendimento rápido em ${CONFIG.areaAtendimento} • Orçamento sem compromisso`;
+footerArea.textContent = `Atendimento rápido em ${CONFIG.areaAtendimento} • Orçamento sem compromisso`;
+
+instagramLink.href = CONFIG.instagram;
 
 logoPlaceholder.textContent = `⚡ ${CONFIG.nomeEmpresa}`;
 descricaoEmpresa.textContent = CONFIG.descricao;
