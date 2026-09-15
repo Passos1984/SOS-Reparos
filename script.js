@@ -13,7 +13,9 @@ const CONFIG = {
   instagram: "https://www.instagram.com/sosreparos",
 
   descricao: "Serviços de manutenção e reparos residenciais.",
-  perguntaServico: "Qual serviço cocê precisa?",
+  perguntaServico: "Qual é o problema  atual?",
+textoDetalhes: "Detalhes do problema",
+placeholderDetalhes: "Ex: Odisjuntor começou a cair que liguei o chuveiro...",
   servicos: [
     "Chuveiro não esquenta / Queimou",
     "Problema no Aquecedor a Gás (Junker)",
@@ -65,6 +67,11 @@ const perguntaServico = document.getElementById('pergunta-servico');
 
 perguntaServico.textContent = CONFIG.perguntaServico;
 radioOptions.forEach((option) => {
+const textoDetalhes = document.getElementById('texto-detalhes');
+const campoDetalhes = document.getElementById('detalhes');
+
+textoDetalhes.textContent = CONFIG.textoDetalhes;
+campoDetalhes.placeholder = CONFIG.placeholderDetalhes;
 
   option.addEventListener("click", () => {
     radioOptions.forEach((opt) => {
