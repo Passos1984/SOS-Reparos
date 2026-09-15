@@ -18,7 +18,7 @@ const CONFIG = {
     "Chuveiro não esquenta / Queimou",
     "Problema no Aquecedor a Gás (Junker)",
     "Disjuntor caindo / Tomada derretida",
-    "Outro problema elétrico ou hidráulico",
+    "Outro serviço (Descrever abaixo)",
   ],
 };
 const whatsappFloat = document.getElementById('whatsapp-float');
