@@ -13,7 +13,7 @@ const CONFIG = {
   instagram: "https://www.instagram.com/sosreparos",
 
   descricao: "Serviços de manutenção e reparos residenciais.",
-
+  perguntaServico: "Qual serviço cocê precisa?",
   servicos: [
     "Chuveiro não esquenta / Queimou",
     "Problema no Aquecedor a Gás (Junker)",
@@ -61,7 +61,11 @@ footer.textContent = `Atendimento rápido em ${CONFIG.cidade} • Orçamento sem
 logoPlaceholder.textContent = `⚡ ${CONFIG.nomeEmpresa}`;
 descricaoEmpresa.textContent = CONFIG.descricao;
 
+const perguntaServico = document.getElementById('pergunta-servico');
+
+perguntaServico.textContent = CONFIG.perguntaServico;
 radioOptions.forEach((option) => {
+
   option.addEventListener("click", () => {
     radioOptions.forEach((opt) => {
       opt.classList.remove("selected");
