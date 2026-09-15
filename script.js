@@ -22,11 +22,20 @@ const CONFIG = {
   ],
 };
 const whatsappFloat = document.getElementById('whatsapp-float');
+
 whatsappFloat.href = `https://wa.me/${CONFIG.whatsapp}`;
+
 document.title = `${CONFIG.nomeEmpresa} - Orçamento Rápido`;
+
 const radioOptions = document.querySelectorAll(".radio-option");
+
 const logoPlaceholder = document.getElementById('logo-placeholder');
+
 const descricaoEmpresa = document.getElementById('descricao-empresa');
+
+const footer = document.querySelector('.footer');
+
+footer.textContent = `Atendimento rápido em ${CONFIG.cidade} • Orçamento sem compromisso`;
 
 logoPlaceholder.textContent = `⚡ ${CONFIG.nomeEmpresa}`;
 descricaoEmpresa.textContent = CONFIG.descricao;
