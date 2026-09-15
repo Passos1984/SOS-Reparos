@@ -57,7 +57,7 @@ footerArea.textContent = `Atendimento rápido em ${CONFIG.areaAtendimento} • O
 
 instagramLink.href = CONFIG.instagram;
 
-logoPlaceholder.textContent = `⚡ ${CONFIG.nomeEmpresa}`;
+logoPlaceholder.textContent = CONFIG.nomeEmpresa;
 descricaoEmpresa.textContent = CONFIG.descricao;
 
 const perguntaServico = document.getElementById('pergunta-servico');
@@ -107,9 +107,9 @@ formulario.addEventListener("submit", function (e) {
 📍 *Endereço:* ${enderecoCompleto}
 🏡 *Bairro/Cidade:* ${bairro}
 
-🛠️ *Serviço solicitado:* ${servico}
+ *Serviço solicitado:* ${servico}
 
-📝 *Detalhes do problema:*
+📝 *Detalhes;*
 ${detalhes}
 `;
 
