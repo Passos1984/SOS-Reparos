@@ -22,9 +22,30 @@ const CONFIG = {
   ],
 };
 const whatsappFloat = document.getElementById('whatsapp-float');
-
 whatsappFloat.href = `https://wa.me/${CONFIG.whatsapp}`;
 
+const servicosContainer = document.getElementById('servicos-container');
+
+CONFIG.servicos.forEach((servico, index) => {
+
+    const label = document.createElement('label');
+    label.classList.add('radio-option');
+
+    const input = document.createElement('input');
+    input.type = 'radio';
+    input.name = 'servico';
+    input.value = servico;
+
+    if (index === 0) {
+        input.required = true;
+    }
+
+    label.appendChild(input);
+    label.appendChild(document.createTextNode(servico));
+
+    servicosContainer.appendChild(label);
+
+});
 document.title = `${CONFIG.nomeEmpresa} - Orçamento Rápido`;
 
 const radioOptions = document.querySelectorAll(".radio-option");
