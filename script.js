@@ -2,7 +2,7 @@
 const CONFIG = {
   nomeEmpresa: "SOS Reparos",
   whatsapp: "5551981962819",
-  cidade: "Porto Alegre",
+ areaAtendimento: "Canoas, Esteio e Sapucaia do Sul",
 
   endereco: {
     rua: "Rua Exemplo",
@@ -58,7 +58,7 @@ const descricaoEmpresa = document.getElementById('descricao-empresa');
 
 const footer = document.querySelector('.footer');
 
-footer.textContent = `Atendimento rápido em ${CONFIG.cidade} • Orçamento sem compromisso`;
+footer.textContent = `Atendimento rápido em ${CONFIG.areaAtendimento} • Orçamento sem compromisso`;
 
 logoPlaceholder.textContent = `⚡ ${CONFIG.nomeEmpresa}`;
 descricaoEmpresa.textContent = CONFIG.descricao;
